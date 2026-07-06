@@ -11,6 +11,8 @@ pinned: false
 
 # fintools-mcp
 
+**Live demo:** https://huggingface.co/spaces/varutudor/fintools-mcp
+
 Personal finance calculators exposed as an MCP server with a Gradio UI, deployable to Hugging Face Spaces.
 
 ## Tools
@@ -38,14 +40,22 @@ pytest
 
 ## Use as an MCP server
 
-The deployed Space exposes an SSE endpoint at `https://<space-url>/gradio_api/mcp/sse`. Connect it as a remote MCP server:
+Claude Code:
+
+```bash
+claude mcp add --transport http --scope user fintools https://varutudor-fintools-mcp.hf.space/gradio_api/mcp/
+```
+
+Generic config (SSE endpoint):
 
 ```json
 {
   "mcpServers": {
     "fintools": {
-      "url": "https://<space-url>/gradio_api/mcp/sse"
+      "url": "https://varutudor-fintools-mcp.hf.space/gradio_api/mcp/sse"
     }
   }
 }
 ```
+
+Note: the free Space sleeps after inactivity — the first request may take ~30s while it wakes up.
