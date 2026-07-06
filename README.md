@@ -1,3 +1,14 @@
+---
+title: Fintools MCP
+emoji: 🧮
+colorFrom: blue
+colorTo: green
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: app.py
+pinned: false
+---
+
 # fintools-mcp
 
 Personal finance calculators exposed as an MCP server with a Gradio UI, deployable to Hugging Face Spaces.
